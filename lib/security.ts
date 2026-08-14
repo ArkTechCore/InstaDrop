@@ -46,13 +46,15 @@ export function assertRateLimit(request: Request): void {
 }
 
 export function validateDownloadTarget(input: string): string {
-  if (!input || input.length > 4096) {
+  const trimmed = input.trim();
+
+  if (!trimmed || trimmed.length > 4096 || /[\r\n\t]/.test(trimmed)) {
     throw new AppError("INVALID_URL", "Invalid download URL.", 400);
   }
 
   let parsed: URL;
   try {
-    parsed = new URL(input);
+    parsed = new URL(trimmed);
   } catch {
     throw new AppError("INVALID_URL", "Invalid download URL.", 400);
   }
@@ -66,7 +68,7 @@ export function validateDownloadTarget(input: string): string {
     throw new AppError("INVALID_URL", "This media host is not supported.", 400);
   }
 
-  return parsed.toString();
+  return trimmed;
 }
 
 export function isAllowedMediaHost(hostname: string): boolean {
