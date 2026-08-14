@@ -37,7 +37,7 @@ Run checks:
 ```bash
 npm run lint
 npm test
-npm run build
+npm run next:build
 ```
 
 Preview the Cloudflare Worker build locally:
@@ -66,8 +66,9 @@ This project uses the current Cloudflare Workers + OpenNext path for full-stack 
 1. Push the project to GitHub.
 2. In Cloudflare, create a Workers application connected to the GitHub repository.
 3. Use these build settings:
-   - Build command: `npm run deploy`
-   - Deploy command if Cloudflare asks separately: `npx opennextjs-cloudflare deploy`
+   - Build command: `npm run build`
+   - Deploy command: `npx wrangler deploy`
+   - Root directory: `/`
    - Output/assets are configured by `wrangler.jsonc`.
 4. Keep the free Workers plan selected.
 5. No environment variables are required.
