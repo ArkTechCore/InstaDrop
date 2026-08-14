@@ -66,7 +66,7 @@ This project uses the current Cloudflare Workers + OpenNext path for full-stack 
 1. Push the project to GitHub.
 2. In Cloudflare, create a Workers application connected to the GitHub repository.
 3. Use these build settings:
-   - Build command: `npm run build`
+   - Build command: `npm run cf:build`
    - Deploy command: `npx wrangler deploy`
    - Root directory: `/`
    - Output/assets are configured by `wrangler.jsonc`.
