@@ -1,0 +1,14 @@
+node_modules
+.next
+.open-next
+.vercel
+.wrangler
+dist
+coverage
+*.log
+.env
+.env.*
+!.env.example
+cloudflare-env.d.ts
+.DS_Store
+Thumbs.db
