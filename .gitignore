@@ -12,3 +12,17 @@ coverage
 cloudflare-env.d.ts
 .DS_Store
 Thumbs.db
+
+# Android
+android-app/.gradle
+android-app/local.properties
+android-app/**/build
+android-app/captures
+android-app/*.iml
+
+# Android
+android-app/.gradle
+android-app/local.properties
+android-app/**/build
+android-app/captures
+android-app/*.iml
